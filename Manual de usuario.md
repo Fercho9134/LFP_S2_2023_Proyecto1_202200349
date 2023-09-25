@@ -1,5 +1,5 @@
-# Introducción a la programación y computación 2
-## Práctica 1
+# Lenguajes formales y de programación
+## Proyecto 1
 ### 4to Semestre
 ```js
 Universidad San Carlos de Guatemala
@@ -9,168 +9,166 @@ Correo: 3291590461103@ingenieria.usac.edu.gt
 ```
 ---
 ## Descripción
-Este proyecto implicó la creación de una aplicación de consola en Python para gestionar un inventario. A través de la implementación de funciones como carga de productos, movimientos de stock y generación de informes, el desarrollo del proyecto permitió ganar experiencia en el manejo de archivos y manipulación de datos. El enfoque en la interacción con archivos y la implementación de reglas de gestión de inventario brindó una oportunidad valiosa para comprender la aplicación práctica de la programación y la resolución de problemas.
+Bienvenido al Manual de Usuario de la Aplicación de Análisis Léxico. Esta aplicación escrita en Python está diseñada para analizar y ejecutar operaciones matemáticas definidas en un formato específico de archivo JSON. Con esta aplicación, podrás realizar cálculos matemáticos, incluyendo operaciones anidadas y configurar visualmente las salidas de los resultados. Antes de comenzar, asegúrate de tener instalada una versión de Python compatible en tu sistema.
 
 ## Objetivos
 * Objetivo General
-    *  Adquirir y aplicar habilidades fundamentales de programación y resolución de problemas a través del desarrollo de una aplicación de consola en Python
+    *  El objetivo general de este manual es proporcionar a los usuarios una guía completa y comprensible para utilizar la aplicación de Análisis Léxico en Python de manera efectiva, permitiéndoles realizar operaciones matemáticas y personalizar la presentación de resultados a través de un archivo JSON de entrada.
 * Objetivos Específicos
-    * Aprender a interactuar con archivos en Python, desde la lectura hasta la escritura, y entender cómo se pueden utilizar para almacenar y procesar datos de manera eficiente.
-    * Adquirir habilidades en el procesamiento de cadenas de texto, dividiéndolas y extrayendo información relevante utilizando métodos y funciones específicas.
-    * Comprender cómo utilizar estructuras de datos como listas para organizar y gestionar información, y cómo acceder y manipular elementos en ellas.
-    * Practicar la aplicación de reglas lógicas en situaciones prácticas, como la actualización de cantidades en el inventario y la validación de disponibilidad al vender productos.
+    * Proporcionar instrucciones detalladas sobre cómo cargar un archivo JSON de entrada.
+    * Explicar cómo utilizar funciones matemáticas especiales y anidar múltiples operaciones.
+    * Ayudar a los usuarios a personalizar la apariencia de los resultados generados por la aplicación.
+
 
 ---
 ## Descripción del proyecto
-El proyecto consiste en una aplicación de consola desarrollada en Python que ofrece la capacidad de gestionar un inventario de productos. La aplicación presenta un menú con cuatro opciones principales, que permiten cargar información desde archivos, realizar movimientos de stock, generar informes y cerrar el programa. A través de la carga de archivos con extensiones ".inv" y ".mov", se pueden crear productos nuevos en lotes y registrar movimientos de agregar stock y vender productos. La aplicación también verifica reglas como la actualización de cantidades y la validación de disponibilidad al vender productos. Adicionalmente, se ofrece la funcionalidad de generar un informe en formato de archivo de texto que muestra los detalles de los productos existentes en el inventario en ese momento. La cuarta opción del menú permite salir y cerrar el programa.
+La Aplicación de Analizador Léxico en Python es un proyecto informático que ofrece una solución efectiva para procesar archivos JSON que contienen instrucciones para realizar operaciones matemáticas. Esta aplicación fue creada con el objetivo de facilitar la interpretación y ejecución de operaciones matemáticas de manera sencilla y flexible. El analizador léxico es una parte esencial en la interpretación de expresiones matemáticas, y esta aplicación lo hace accesible y utilizable tanto para usuarios educativos como para aquellos que necesitan realizar cálculos avanzados.
 
-#### Menú
+#### Requisitos del sistema
+Antes de comenzar a utilizar la Aplicación de Analizador Léxico en Python, es importante asegurarse de que su sistema cumpla con los requisitos mínimos. Esto garantizará una experiencia de uso fluida y sin problemas. A continuación, se detallan los requisitos del sistema:
 
-El menú se muestra utilizando el siguiente código
-![Imagen1](https://i.ibb.co/93mkk9c/Foto-codigo-men.png")
-Dentro de la función "menu" se llama a la función "seleccionar_opcion(argumento)" que recibe como argumento el número ingresado por el usuario. El código de esa función se muestra a continuación
-![Imagen2](https://i.ibb.co/qgbZK4k/Seleccionar.png)
-Con ayuda de algunos if aninados se guía al usuario a la opción a la que desea ingresar.
+* Requisitos de Hardware
 
-#### Carga de inventario
+    Para ejecutar la aplicación de manera eficiente, se recomienda un equipo con las siguientes especificaciones mínimas:
 
-La aplicación permite la carga de productos en el inventario a través de la lectura de un archivo con extensión ".inv". Cada línea del archivo contiene información para crear productos nuevos en lote, incluyendo el nombre del producto, la cantidad disponible, el precio unitario y la ubicación en el inventario. De esto se encarga la función cargar_inventario(self)
+    * Procesador de al menos 1 GHz.
+    * 1 GB de memoria RAM.
+    * 10 MB de espacio en disco duro para la aplicación y archivos relacionados.
+    * Conexión a Internet (para instalar bibliotecas adicionales, si es necesario).
+    
+* Requisitos de Software
 
-La instruccion se debe encontrar en la forma:
+    Asegúrese de tener los siguientes componentes de software instalados en su sistema:
 
-```sh
-crear_producto <nombre>;<cantidad>;<precio_unitario>;<ubicacion>
-```
+    * Python 3.x: La aplicación está escrita en Python y requiere una versión de Python 3.x. Puede descargar Python desde el sitio web oficial (https://www.python.org/downloads/) e instalarlo siguiendo las instrucciones proporcionadas en la documentación.
+    
+* Bibliotecas Adicionales
 
-El código utilizado dentro de esta función es el siguiente:
+    * Graphviz (Biblioteca adicional): Para visualizar un grafo de las operaciones realizadas, la aplicación utiliza la biblioteca Graphviz. Puede descargar e instalar Graphviz desde el sitio web oficial (https://www.graphviz.org/download/) siguiendo las instrucciones específicas para su sistema operativo. Asegúrese de que la instalación de Graphviz esté correctamente configurada y sea accesible desde la línea de comandos.
+    * Tkinter (Biblioteca adicional): Para visualizar la interfaz gráfica
 
-![Imagen 3](https://i.ibb.co/4gcdHmJ/cargar-inventario.png)
 
-Al inicio de la función, con ayuda de la librería Tkinter se abre una ventana del explorador de archivos de windows, esta le permite al usuario seleccionar un archivo con la extensión ".inv" en el momento que el usuario presiona aceptar, se almacena la dirección del archivo que el usuario desea importar. Si el usuario no seleccionó ningun archivo el programa lo devolverá al menú. Luego de seleccionar el archivo correctamente, se verifica una segunda vez que el archivo seleccionado tenga la extensión correcta, de ser así se procede a leer el archivo linea a linea. De cada linea se extrae la información de cada instrucción para realizar lo que estas indican, esto ultimo se realiza con el siguiente fragmento de código
+#### Interfaz gráfica
 
-![Imagen 4](https://i.ibb.co/xj7yc7q/Abriendo-archivo.png")
+La interfaz gráfica de nuestra aplicación es la ventana principal donde los usuarios pueden interactuar con facilidad. Está diseñada de manera intuitiva para facilitar la edición de archivos JSON y la realización de análisis léxicos. A continuación, describiremos los componentes clave de la interfaz:
 
-Una vez obtenido el contenido de la linea de instrucción se procede a crear el nuevo producto, con la instruccion que se muestra a continuacion
+![Imagen 1](https://i.ibb.co/3hcFGC6/Interfaz-1.png)
 
-![Imagen 5](https://i.ibb.co/nBkY8kM/a-adir-producto.png)
+1. Barra de Menú:
 
-Para ello se utiliza una clase llamada "Producto" cuyo contenido es el siguiente
+    En la parte superior de la ventana, encontrarás una barra de menú que ofrece acceso a diversas funciones.
+    Puedes abrir, guardar o guardar como archivos JSON utilizando las opciones en el menú "Archivo".
+    En el menú "Herramientas", puedes realizar análisis léxicos, verificar errores y generar las imagenes con los resultados de las operaciones obtenidas del archivo JSON.
+    
+2. Área de Edición de Texto:
 
-```sh
-class Producto:
+    El área principal de la interfaz es una caja de texto con un fondo oscuro y texto blanco.
+    Aquí puedes editar y visualizar el contenido del archivo JSON.
+    La caja de texto admite desplazamiento horizontal mediante el deslizador ubicado en la parte inferior.
 
-    def __init__(self, nombre, cantidad, precio_unitario, ubicacion):
-        self.nombre = nombre
-        self.cantidad = cantidad
-        self.precio_unitario = precio_unitario
-        self.ubicacion = ubicacion
-```
+3. Indicador de Línea y Columna:
 
-Todo el código mostrado anteriormente se ejecuta una vez por cada linea que contenga el archivo ".inv" y por cada iteración se verifica que el producto nuevo que se está creando no exista ya en la lista de productos, con el siguiente código
+    En la parte inferior derecha de la ventana, encontrarás una etiqueta que muestra la posición actual del cursor.
+    Muestra la línea y la columna en la que te encuentras mientras editas el archivo.
+    
+4. Funcionalidades Principales:
 
-```sh
-for producto in self.lista_productos:
-    if producto.get_nombre() == nombre_producto and producto.get_ubicacion() == ubicacion:
-        print("\nEl producto", nombre_producto, "ya existe en la ubicación", ubicacion, "por lo que no se sobreescibirá y se omitirá...")
-        existe = True
-        break
-```
+    Puedes abrir archivos JSON existentes utilizando la opción "Abrir" del menú "Archivo". Esto carga el contenido del archivo en el área de edición de texto.
+    La opción "Guardar" permite guardar los cambios en el archivo actual.
+    Si deseas guardar el archivo con un nuevo nombre, puedes utilizar la opción "Guardar como".
+    
+    ![Imagen 2](https://i.ibb.co/9WJLVyk/Interfaz-2.png)
+    
+    La opción "Analizar" inicia el proceso de análisis léxico del contenido JSON en la caja de texto.
+    "Errores" te permite verificar y guardar un informe de errores si se encuentran problemas en el análisis.
+    "Reporte" genera y guarda un diagrama con el resultado y procedimiento de todas las operaciones encontradas en el archivo JSON durante el análisis.
+    
+    ![Imagen 2](https://i.ibb.co/gRspzx8/Interfaz-3.png)
+    
+    
+5. Actualización en Tiempo Real:
 
-Al finalizar de crear todos los productos se muestra el menú nuevamente
+    El indicador de línea y columna se actualiza automáticamente mientras editas el contenido.
+    Los resultados del análisis léxico se muestran en ventanas emergentes, informando si se encontraron errores o si la operación se completó con éxito.
 
-#### Carga de movimientos
 
-La aplicación permite la carga de instrucciones para actualizar el stock de los productos creados con anterioridad a través de la lectura de un archivo con extensión ".mov". Cada línea del archivo contiene información para añadir o descontar productos del inventario o dicho de otra forma, vender o comprar productos. De esto se encarga la función cargar_movimentos(self)
+#### Estructura del archivo JSON
 
-La instruccion para agregar stock se debe encontrar en la forma:
-
-```sh
-agregar_stock <nombre>;<cantidad>;<ubicacion>
-```
-
-Y la función para descontar stock debe encontrarse de la forma:
-
-```sh
-vender_producto <nombre>;<cantidad>;<ubicacion>
-
-```
-
-El código utilizado dentro de esta función es el siguiente:
-
-![Imagen 3](https://i.ibb.co/61zHmsY/A-adir-movimiento.png")
-
-Al inicio de la función, con ayuda de la librería Tkinter se abre una ventana del explorador de archivos de windows, esta le permite al usuario seleccionar un archivo con la extensión ".mov" en el momento que el usuario presiona aceptar, se almacena la dirección del archivo que el usuario desea importar. Si el usuario no seleccionó ningun archivo el programa lo devolverá al menú. Luego de seleccionar el archivo correctamente, se verifica una segunda vez que el archivo seleccionado tenga la extensión correcta, de ser así se procede a leer el archivo linea a linea. De cada linea se extrae la información de cada instrucción para realizar lo que estas indican, esto ultimo se realiza con el siguiente fragmento de código
-
-![Imagen 4](https://i.ibb.co/QdVLnTR/info-movimi.png)
-
-Una vez obtenido el contenido de la linea de instrucción se procede a seguir la instrucción, esto con ayuda del siguiente código
+Para que la aplicación funcione sin problemas, es importante que el archivo JSON de entrada siga una estructura específica que la aplicación pueda comprender y procesar correctamente. A continuación, se describe la estructura necesaria para el archivo JSON:
 
 ```sh
-if instruccion == "agregar_stock":
-
-    for producto in self.lista_productos:
-
-        if producto.get_nombre() == nombre_producto_movimiento and producto.get_ubicacion() == ubicacion_movimiento:
-            cantidad_actual = int(producto.get_cantidad())
-            cantidad_nueva = cantidad_actual + int(cantidad_producto_movimiento)
-            producto.set_cantidad(cantidad_nueva)
-            existe = True
-            break
-
-            if existe == False:
-                print("\n> El producto", nombre_producto_movimiento, "no existe en la ubicación", ubicacion_movimiento, "por lo que no se puede agregar stock... Se omitirá el movimiento...")
-
-
-elif instruccion == "vender_producto":
-
-    for producto in self.lista_productos:
-
-        if producto.get_nombre() == nombre_producto_movimiento and producto.get_ubicacion() == ubicacion_movimiento:
-                                    
-            cantidad_actual = int(producto.get_cantidad())
-
-            if cantidad_actual < int(cantidad_producto_movimiento):
-                print("\n> No se puede vender el producto", nombre_producto_movimiento, "ya que no hay suficiente stock en la ubicación", ubicacion_movimiento, "... Se omitirá el movimiento...")
-                existe = True
-                break
-                                    
-            else:
-                cantidad_nueva = cantidad_actual - int(cantidad_producto_movimiento)
-                producto.set_cantidad(cantidad_nueva)
-                existe = True
-                break
+{
+  "operaciones": [
+    {
+      "operacion": "nombre_operacion",
+      "valor1": valor,
+      "valor2": valor_o_lista_de_operaciones
+    },
+    {
+      "operacion": "nombre_operacion",
+      "valor1": valor,
+      "valor2": valor_o_lista_de_operaciones
+    },
+    ...
+  ],
+  "configuraciones": [
+    {
+      "texto": "texto_descriptivo",
+      "fondo": "color_de_fondo",
+      "fuente": "color_de_fuente",
+      "forma": "forma_geometrica"
+    }
+  ]
+}
 ```
 
-Todo el código mostrado anteriormente se ejecuta una vez por cada linea que contenga el archivo ".mov" por cada iteración va siguiendo la instrucción de la linea al momento de leerla. Al momento de agregar productos se verifica que el producto exista en la ubicación especificada en la instrucción, para ello se utiliza la variable booleana "existe" que se marca como true uicamente si encuentra el nombre del producto en la ubicación indicada.
+#### Guía de uso
+En esta sección, te proporcionaremos una guía paso a paso sobre cómo utilizar nuestra aplicación de análisis léxico en Python. Siga estos pasos para aprovechar al máximo la funcionalidad de la aplicación:
 
-Al momento de veder productos se verifica que el producto exista en la ubicación indicada y tambien que la cantidad a descontar no sea mayor que la cantidad que se encuentre en ese momento en existencia, esto para evitar cantidades negativas. 
+* Paso 1: Abrir un Archivo JSON
 
-Al finalizar de leer el archivo la aplicación muestra el menú nuevamente.
+    * Haga clic en "Archivo" en la barra de menú.
+    * Seleccione "Abrir" para cargar un archivo JSON existente.
+    * Navegue y elija el archivo JSON que desea analizar y editar.
+    * Haga clic en "Abrir" para cargar el contenido del archivo en el área de     edición de texto.
+    
+* Paso 2: Realizar Operaciones Matemáticas
 
-#### Generación de reporte
+    * En el área de edición de texto, verá el contenido del archivo JSON.
+    Asegúrese de que el contenido siga la estructura adecuada con operaciones matemáticas y configuraciones.
+    * Utilice las operaciones matemáticas definidas en el archivo según sus necesidades.
+    * Puede anidar operaciones y utilizar funciones matemáticas especiales según lo requiera.
+    
+* Paso 3: Personalizar la Salida (Opcional)
 
-La función crear_informe(self) tiene como objetivo generar un informe detallado de los productos existentes en el inventario y guardar esta información en un archivo de texto llamado "informe.txt". Esta función recopila los datos relevantes de cada producto, como su nombre, cantidad, precio unitario, valor total y ubicación, y los formatea en una tabla legible.
+    * Si desea personalizar la apariencia de la salida de resultados, agregué la sección de configuraciones tal como se muestra en la estructura del archivo JSON, coloque los datos que desee
+    
+* Paso 4: Realizar el Análisis Léxico
 
-La función comienza con la creación de un encabezado que establece el formato del informe, incluyendo los títulos de las columnas. A continuación, recorre la lista de productos en el inventario y extrae los atributos necesarios de cada producto utilizando métodos como
-```sh
-get_nombre(), get_cantidad(), get_precio_unitario() y get_ubicacion().
-```
+    * Vaya al menú "Herramientas" y seleccione "Analizar" para iniciar el análisis léxico.
+    * El análisis se completará y se mostrará un mensaje emergente con los resultados.
+    * Si se encuentran errores, se mostrará un informe que puede guardar.
+    * Si no se encuentran errores, se mostrará un mensaje de éxito.
+    
+* Paso 5: Guardar el reporte de resultados
+    
+    * Si el análisis se completó con exito, presione el boton "Reporte" del menú "Herramientas" para visualizar los resultados de las operaciones matemáticas reconocidas en el archivo JSON.
+    
+     ![Imagen 5](https://i.ibb.co/b5Tt4yL/RESULTADOS-202200349.png) 
 
-Se realiza el cálculo del valor total multiplicando la cantidad por el precio unitario, redondeándolo a dos decimales. Luego, se formatean los datos de cada producto en una cadena tabular que cumple con el formato del encabezado.
+* Paso 6: Guardar el reporte de errores
+    
+    * Si el análisis no se completó con exito, presione el boton "Errores" del menú "Herramientas" para visualizar un archivo JSON con todos los errores encontrados durante el análisis
+    
+    ![Imagen 5](https://i.ibb.co/1sZYBNc/Errores.png) 
 
-La cadena formateada se escribe en el archivo de informe junto con el encabezado, creando así una tabla que muestra claramente los detalles de cada producto.
+* Paso 7: Guardar el Archivo (Opcional)
 
-Una vez que se completa la generación del informe y se guarda en el archivo "informe.txt", se muestra un mensaje en la consola indicando la ubicación del archivo y se regresa al menú principal de la aplicación.
+    * Para guardar los cambios realizados en el archivo, vaya al menú "Archivo".
+    Seleccione "Guardar" para sobrescribir el archivo actual o "Guardar como" para guardar con un nuevo nombre.
+    
+* Paso 8: Cerrar la Aplicación
 
-El codigo utilizado para esta función se muestra a continuación:
+    * Cuando haya terminado, vaya al menú "Archivo" y seleccione "Salir" para cerrar la aplicación.
 
-![ImagenRep](https://i.ibb.co/82cxQbb/crear-reporte.png)
-
-#### Salir
-Por útlimo, la opción salir del menú. Detiene el programa por completo y limpia la memoria, para esta función únicamente se utiliza la línea 
-
-```sh
-exit()
-```
-
-![Messi](https://i.ibb.co/z6Nb8rg/messi.jpg")
+Siga estos pasos para una experiencia fluida al utilizar la aplicación. Si necesita ayuda adicional o encuentra problemas, pongase en contacto al número 1777

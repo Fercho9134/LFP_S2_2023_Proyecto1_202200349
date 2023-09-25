@@ -1,0 +1,39 @@
+// ejemplo de operaciones
+digraph {
+	0 [label="resta
+5.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	1 [label=10.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	2 [label="suma
+5.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	0 -> 1
+	0 -> 2
+	3 [label=2.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	4 [label=3.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	2 -> 4
+	2 -> 3
+	5 [label="multiplicacion
+32.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	6 [label=4.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	7 [label="potencia
+8.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	5 -> 6
+	5 -> 7
+	8 [label=2.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	9 [label="raiz
+3.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	7 -> 8
+	7 -> 9
+	10 [label=9.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	11 [label=2.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	9 -> 11
+	9 -> 10
+	12 [label="suma
+6.32" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	13 [label="seno
+1.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	14 [label=5.32 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	12 -> 14
+	12 -> 13
+	15 [label=90.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	13 -> 15
+}

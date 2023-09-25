@@ -90,20 +90,33 @@ class InterfazGrafica:
         self.root.destroy()
 
     def analizar(self):
-        codigo_json = self.caja_texto.get("1.0", "end")
-
-        token, error = analizador_lexico(codigo_json)
         
-        configuraciones = buscar_configuraciones(token)
-        self.diagrama = Diagrama(configuraciones[0], configuraciones[1], configuraciones[2], configuraciones[3])
+            codigo_json = self.caja_texto.get("1.0", "end")
 
-        analizar_json(codigo_json, self.diagrama)
+            token, error = analizador_lexico(codigo_json)
 
-        #Mostrar motificacion popup de que se realizo el analisis, si se encontraron errores indicarlo y decir que puede que las operaciones no se realicen correctamente
-        if error:
-            messagebox.showinfo("Analisis", "El análisis se completó. Se encontraron errores en el analisis, puede que las operaciones no se realicen correctamente\n Genere el reporte de errores para ver los detalles")
-        else:
-            messagebox.showinfo("Analisis", "El análisis se completó. No se encontraron errores en el analisis")
+            print("Tokens reconocidos: " + str(len(token)))
+            for tokens in token:
+                print("Tipo del token: " + str(tokens.tipo) + " || Valor del token: " + str(tokens.valor))
+
+            try:
+            
+                configuraciones = buscar_configuraciones(token)
+                self.diagrama = Diagrama(configuraciones[0], configuraciones[1], configuraciones[2], configuraciones[3])
+                
+            except Exception as e:
+                print(e)
+                messagebox.showerror("Error", "Ocurrió un error al analizar las configuraciones, no se encontraron las configuraciones")
+                self.diagrama = Diagrama("Sin nombre", "white", "black", "circle")
+
+            analizar_json(codigo_json, self.diagrama)
+
+            #Mostrar motificacion popup de que se realizo el analisis, si se encontraron errores indicarlo y decir que puede que las operaciones no se realicen correctamente
+            if error:
+                messagebox.showinfo("Analisis", "El análisis se completó. Se encontraron errores en el analisis, puede que las operaciones no se realicen correctamente\n Genere el reporte de errores para ver los detalles")
+            else:
+                messagebox.showinfo("Analisis", "El análisis se completó. No se encontraron errores en el analisis")
+
 
  
 
