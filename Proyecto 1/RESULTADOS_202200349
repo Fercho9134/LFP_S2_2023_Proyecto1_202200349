@@ -1,0 +1,28 @@
+// ejemplo de operaciones
+digraph {
+	0 [label="resta
+2.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	1 [label=10.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	2 [label="potencia
+8.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	0 -> 1
+	0 -> 2
+	3 [label=2.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	4 [label="raiz
+3.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	2 -> 3
+	2 -> 4
+	5 [label=9.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	6 [label=2.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	4 -> 6
+	4 -> 5
+	7 [label="suma
+6.32" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	8 [label="seno
+1.0" fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	9 [label=5.32 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	7 -> 9
+	7 -> 8
+	10 [label=90.0 fillcolor=cornflowerblue fontcolor=black shape=septagon style=filled]
+	8 -> 10
+}
